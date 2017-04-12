@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package anupam;
+
+service App {
+	rpc SendRequest (reply)  returns (request) {}
+	rpc SendReply (request)  returns (reply) {}
+}
+message request {
+	string Request = 1;
+}
+
+
+message reply {
+	string Reply = 1;
+}

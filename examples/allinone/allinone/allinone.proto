@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "allinone";
+option java_outer_classname = "io.grpc.examples.allinone";
+
+package allinone;
+
+service allinone	{
+	rpc SendmanytoClient (Point)	returns (stream Rect)	{}
+	rpc SendmanytoServer (stream Rect) returns (Point)	{}
+	rpc SendonetoClient (Point) returns (Point)	{}
+	rpc SendonetoServer (Point) returns (Point)	{}
+}
+
+message Point	{
+	int32 a = 1;
+	int32 b = 2;
+}
+
+message Rect	{
+	Point a = 1;
+	Point b = 2;
+}

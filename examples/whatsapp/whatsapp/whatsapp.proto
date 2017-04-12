@@ -1,0 +1,15 @@
+syntax =  "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "io.grpc.examples.whatsapp";
+option java_package = "whatsapp";
+
+package whatsapp;
+
+service whatsapp {
+	rpc Chat (stream Message) returns (stream Message) {}
+}
+
+message Message {
+	string chat = 1;
+}

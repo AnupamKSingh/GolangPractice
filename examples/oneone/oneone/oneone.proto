@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.oneone";
+option java_outer_classname = "oneone";
+
+package oneone;
+
+service oneone	{
+	rpc GetFeature(Point1) returns (Point2) {}
+}
+
+message Point1	{
+	int32 a = 1;
+	int32 b = 2;
+}
+
+message Point2 {
+	int32 a = 1;
+	int32 b = 2;
+}

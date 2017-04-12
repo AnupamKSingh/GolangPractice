@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "io.grpc.examples.anupam";
+option java_outer_classname = "anupam";
+
+package anupam;
+
+
+service anupam	{
+	rpc GetFeature(Point1) returns (Rect) {}
+	rpc SetFeature(Point2) returns (stream RectStr) {}
+}
+message Point1	{
+	int32 a = 1;
+	int32 b = 2;
+}
+
+message Point2	{
+	int32 a = 1;
+	int32 b = 2;
+}
+
+message Rect {
+	Point1 a = 1;
+	Point1 b = 2;
+}
+
+message RectStr	{
+	Point2 a = 1;
+	Point2 b = 2;
+}
+
+	

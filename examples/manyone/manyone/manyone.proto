@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "manyone";
+option java_package = "io.grpc.examples.manyone";
+
+package manyone;
+
+service manyone	{
+	rpc MultiSendClient (stream Point)	returns (Rect) {}
+}
+
+message Point	{
+	int32 a = 1;
+	int32 b = 2;
+}
+
+message Rect	{
+	Point a = 1;
+	Point b = 2;
+}

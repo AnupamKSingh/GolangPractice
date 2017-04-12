@@ -1,0 +1,30 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "new1";
+option java_outer_classname = "io.grpc.examples.proto.new1";
+
+package new1;
+
+service new1	{
+	rpc ServertoClient (stream Message) returns (stream Message)	{}
+}
+
+message EnumMessage	{
+	enum Enum {
+	ANU = 0;
+	DEE = 1;
+	}
+	Enum a = 1;
+}
+
+message Message {
+	uint64 a = 1;
+	uint32 b = 2;
+	double c = 3;
+	string d = 4;
+	repeated bool e = 5;
+	EnumMessage f = 6;
+	bytes g = 7;
+	repeated string h = 8;
+}

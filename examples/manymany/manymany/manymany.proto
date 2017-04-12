@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "io.grpc.examples.manymany.manymany";
+option java_package = "manymany";
+
+package manymany;
+
+service manymany	{
+	rpc ServerSendMany(Point) returns (stream Rect) {}
+}
+
+message Point	{
+	int32 a = 1;
+	int32 b = 2;
+}
+
+message Rect	{
+	Point a = 1;
+	Point b = 2;
+}

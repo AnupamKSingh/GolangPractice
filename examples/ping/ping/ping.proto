@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "io.grpc.examples.ping";
+option java_package  = "ping";
+
+package ping;
+
+service ping	{
+	rpc pingpong (stream packet) returns (stream packet) {}
+}
+
+message packet {
+	bytes pack = 1;
+}
