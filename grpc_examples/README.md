@@ -1,9 +1,12 @@
-gRPC in 3 minutes (Go)
+gRPC  in Go
 ======================
+Here we have all the possible scenarios for client and server to send and recieve messages. With all 
+basic protocol buffers.
+
 
 BACKGROUND
 -------------
-For this sample, we've already generated the server and client stubs from [helloworld.proto](helloworld/helloworld/helloworld.proto).
+All the folders are having the Client and Server implementation of RPCs.
 
 PREREQUISITES
 -------------
@@ -21,6 +24,7 @@ INSTALL
 -------
 
 ```
+As an example, same applicable for all
 $ go get -u google.golang.org/grpc/examples/helloworld/greeter_client
 $ go get -u google.golang.org/grpc/examples/helloworld/greeter_server
 ```
